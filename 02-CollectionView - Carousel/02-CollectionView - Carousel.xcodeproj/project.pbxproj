@@ -12,6 +12,8 @@
 		6311F9C927E2725B0029BE7B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6311F9C827E2725B0029BE7B /* MainVC.swift */; };
 		6311F9CE27E2725D0029BE7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6311F9CD27E2725D0029BE7B /* Assets.xcassets */; };
 		6311F9D127E2725D0029BE7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6311F9CF27E2725D0029BE7B /* LaunchScreen.storyboard */; };
+		6311F9DA27E273300029BE7B /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6311F9D927E273300029BE7B /* CarModel.swift */; };
+		6311F9DC27E275A70029BE7B /* MyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6311F9DB27E275A70029BE7B /* MyCustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		6311F9CD27E2725D0029BE7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6311F9D027E2725D0029BE7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6311F9D227E2725D0029BE7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6311F9D927E273300029BE7B /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
+		6311F9DB27E275A70029BE7B /* MyCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,24 @@
 		6311F9C327E2725B0029BE7B /* 02-CollectionView - Carousel */ = {
 			isa = PBXGroup;
 			children = (
+				6311F9D827E273210029BE7B /* Models */,
 				6311F9C427E2725B0029BE7B /* AppDelegate.swift */,
 				6311F9C627E2725B0029BE7B /* SceneDelegate.swift */,
 				6311F9C827E2725B0029BE7B /* MainVC.swift */,
 				6311F9CD27E2725D0029BE7B /* Assets.xcassets */,
 				6311F9CF27E2725D0029BE7B /* LaunchScreen.storyboard */,
 				6311F9D227E2725D0029BE7B /* Info.plist */,
+				6311F9DB27E275A70029BE7B /* MyCustomCell.swift */,
 			);
 			path = "02-CollectionView - Carousel";
+			sourceTree = "<group>";
+		};
+		6311F9D827E273210029BE7B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6311F9D927E273300029BE7B /* CarModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +149,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6311F9C927E2725B0029BE7B /* MainVC.swift in Sources */,
+				6311F9DC27E275A70029BE7B /* MyCustomCell.swift in Sources */,
 				6311F9C527E2725B0029BE7B /* AppDelegate.swift in Sources */,
 				6311F9C727E2725B0029BE7B /* SceneDelegate.swift in Sources */,
+				6311F9DA27E273300029BE7B /* CarModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
