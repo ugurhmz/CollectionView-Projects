@@ -18,10 +18,10 @@ class MainVC: UIViewController {
     
     
     private let myCollectionView: UICollectionView = {
-        let layout = UICollectionViewLayout()
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        
         cv.register(MyCustomCell.self,
                     forCellWithReuseIdentifier: MyCustomCell.identifier)
         return cv
@@ -38,7 +38,10 @@ class MainVC: UIViewController {
         view.addSubview(myCollectionView)
         view.backgroundColor = .white
         setMyCollectionViewConstraints()
-        myCollectionView.backgroundColor = .red
+        
+        
+        myCollectionView.delegate = self
+        myCollectionView.dataSource = self
     }
 
 
@@ -58,3 +61,42 @@ extension MainVC {
     }
 }
 
+
+
+//MARK: - Delegate, DataSource
+extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    // kaç hücre olcak
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    // hücrelerin datası
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: MyCustomCell.identifier, for: indexPath)
+        
+        cell.backgroundColor = indexPath.row % 2 == 0 ? .green: .red
+        return cell
+    }
+    
+    // her bir hücre boyutu
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: myCollectionView.frame.width / 2.5,
+                      height: myCollectionView.frame.width / 2 )
+        
+    }
+    
+}
+
+
+
+//MARK: - ViewDelegateFlowLayout
+extension MainVC: UICollectionViewDelegateFlowLayout {
+    
+}
