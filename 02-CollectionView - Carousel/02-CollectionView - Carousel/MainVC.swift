@@ -10,10 +10,13 @@ import UIKit
 class MainVC: UIViewController {
 
     
-    let myData = [
+    let carData = [
         CarModel(name: "Car One", carImage: UIImage(named: "car1")!),
         CarModel(name: "Car Two", carImage: UIImage(named: "car2")!),
-        CarModel(name: "Car Three", carImage: UIImage(named:"car3")!)
+        CarModel(name: "Car Three", carImage: UIImage(named:"car3")!),
+        CarModel(name: "Car 4", carImage: UIImage(named:"car4")!),
+        CarModel(name: "Car 5", carImage: UIImage(named:"car5")!),
+        CarModel(name: "Car 6", carImage: UIImage(named:"car6")!)
     ]
     
     
@@ -26,7 +29,7 @@ class MainVC: UIViewController {
                     forCellWithReuseIdentifier: MyCustomCell.identifier)
         return cv
     }()
-    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +39,9 @@ class MainVC: UIViewController {
     
     func setupViews() {
         view.addSubview(myCollectionView)
-        view.backgroundColor = .white
+        myCollectionView.backgroundColor = .clear
         setMyCollectionViewConstraints()
-        
+        view.backgroundColor = .lightGray
         
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
@@ -53,12 +56,14 @@ extension MainVC {
     
     private func  setMyCollectionViewConstraints(){
         NSLayoutConstraint.activate([
-            myCollectionView.topAnchor.constraint(equalTo: view.topAnchor , constant: 100),
-            myCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            myCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            myCollectionView.heightAnchor.constraint(equalToConstant: view.frame.width / 2)
+            myCollectionView.centerYAnchor.constraint(equalTo: view.centerYAnchor ),
+            myCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            myCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            myCollectionView.heightAnchor.constraint(equalToConstant: view.frame.width / 1.2)
         ])
     }
+    
+   
 }
 
 
@@ -69,28 +74,23 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
     // kaç hücre olcak
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return  carData.count
     }
+    
     
     // hücrelerin datası
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: MyCustomCell.identifier, for: indexPath)
+        let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: MyCustomCell.identifier, for: indexPath) as! MyCustomCell
         
-        cell.backgroundColor = indexPath.row % 2 == 0 ? .green: .red
+        cell.data = self.carData[indexPath.item]
         return cell
     }
     
-    // her bir hücre boyutu
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: myCollectionView.frame.width / 2.5,
-                      height: myCollectionView.frame.width / 2 )
-        
-    }
+    
+    
+    
     
 }
 
@@ -99,4 +99,12 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
 //MARK: - ViewDelegateFlowLayout
 extension MainVC: UICollectionViewDelegateFlowLayout {
     
+    // her bir hücre boyutu
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: myCollectionView.frame.width / 2.5,
+                      height: myCollectionView.frame.width / 1.2 )
+    }
 }
