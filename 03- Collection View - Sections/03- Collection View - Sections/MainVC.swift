@@ -110,7 +110,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         if section == 1 {
-            return 9
+            return 35
         }
         
         return 1
@@ -124,7 +124,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
         if indexPath.section == 1 {
             let imageCell = myCollectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.identifier, for: indexPath) as! ImageCell
             
-            imageCell.backgroundColor = indexPath.item % 2 == 0 ? .green : .brown
+            
             return imageCell
         }
         
@@ -139,3 +139,34 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
 }
 
+
+//MARK: -  UICollectionViewFlowLayoutDelegate
+extension MainVC: UICollectionViewDelegateFlowLayout {
+    
+    // Her hücre boyutu, width, height
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        // Section 1 için
+        if indexPath.section == 1 {
+            return CGSize(width: (view.frame.width / 3) - 16 ,
+                          height: 100)
+        }
+        // Üst section için
+        return CGSize(width: view.frame.width, height: 300)
+    }
+    
+    
+    
+    
+    // Hücreler arası boşluk
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        if section == 1 {
+            return UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 8)
+        }
+        return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+    }
+}
