@@ -50,6 +50,16 @@ class MainVC: UIViewController {
         view.addSubview(myCollectionView)
         setCollectionViewConstraints()
         setImageConstraint()
+        
+        
+        myCollectionView.delegate = self
+        myCollectionView.dataSource = self
+        
+        // Custom Cell için register
+        myCollectionView.register(ImageCell.self,
+                                  forCellWithReuseIdentifier: ImageCell.identifier)
+        myCollectionView.register(AlbumCell.self,
+                                  forCellWithReuseIdentifier: AlbumCell.identifier)
     }
     
 }
@@ -85,3 +95,47 @@ extension MainVC {
     
     
 }
+
+
+//MARK: - Delegate, DataSource
+extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    //  2 tane bölümüm olsun
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
+    
+    // Kaçtane Hücre oluşturulacağı
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        if section == 1 {
+            return 9
+        }
+        
+        return 1
+    }
+    
+    
+    // Hücrelerin verisini buraya yazıyoruz
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // IMAGE Section
+        if indexPath.section == 1 {
+            let imageCell = myCollectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.identifier, for: indexPath) as! ImageCell
+            
+            imageCell.backgroundColor = indexPath.item % 2 == 0 ? .green : .brown
+            return imageCell
+        }
+        
+        // ALBUM Section
+        let albumCell = myCollectionView.dequeueReusableCell(withReuseIdentifier: AlbumCell.identifier, for: indexPath) as! AlbumCell
+        
+        return albumCell
+    }
+    
+    
+    
+    
+}
+
