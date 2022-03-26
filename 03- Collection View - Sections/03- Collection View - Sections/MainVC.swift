@@ -8,12 +8,18 @@
 import UIKit
 
 class MainVC: UIViewController {
-
+    
+    static var bottomImageArr = ["a5","a3","v1","v2","v3", "v4"]
+    static var albumArr = ["v1","v2","a3","a4","a5","a6","a7","a8","v3","v1","a2","v3", "v4"
+    
+    ]
+    
+    
    
-    //image
+    //Background Image, All views
     private let myView: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: "mybg")
+        iv.image = UIImage(named: "bl2")
         iv.contentMode = .scaleAspectFill
         
         iv.translatesAutoresizingMaskIntoConstraints = false
@@ -29,9 +35,15 @@ class MainVC: UIViewController {
         
         // collectionview özelleştirme
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 16
+        layout.minimumLineSpacing = 5
         cv.backgroundColor = .clear
         cv.translatesAutoresizingMaskIntoConstraints = false
+        
+        // Custom Cell için register
+        cv.register(TopImageCell.self,
+                                  forCellWithReuseIdentifier: TopImageCell.identifier)
+        cv.register(BottomCell.self,
+                                  forCellWithReuseIdentifier: BottomCell.identifier)
         
         return cv
     }()
@@ -55,11 +67,7 @@ class MainVC: UIViewController {
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
         
-        // Custom Cell için register
-        myCollectionView.register(ImageCell.self,
-                                  forCellWithReuseIdentifier: ImageCell.identifier)
-        myCollectionView.register(AlbumCell.self,
-                                  forCellWithReuseIdentifier: AlbumCell.identifier)
+    
     }
     
 }
@@ -110,7 +118,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         if section == 1 {
-            return 35
+            return MainVC.albumArr.count
         }
         
         return 1
@@ -120,18 +128,26 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
     // Hücrelerin verisini buraya yazıyoruz
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // IMAGE Section
+        
+        
+        // bttmCell Section
         if indexPath.section == 1 {
-            let imageCell = myCollectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.identifier, for: indexPath) as! ImageCell
+            
+            let bttmCell = myCollectionView.dequeueReusableCell(withReuseIdentifier: BottomCell.identifier, for: indexPath) as! BottomCell
+            
+            bttmCell.bottomImages = MainVC.albumArr[indexPath.item]
             
             
-            return imageCell
+            return bttmCell
         }
         
-        // ALBUM Section
-        let albumCell = myCollectionView.dequeueReusableCell(withReuseIdentifier: AlbumCell.identifier, for: indexPath) as! AlbumCell
         
-        return albumCell
+        
+        // topCell ALBUM Section
+        let topCell = myCollectionView.dequeueReusableCell(withReuseIdentifier: TopImageCell.identifier, for: indexPath) as! TopImageCell
+        topCell.myImages = MainVC.bottomImageArr
+        
+        return topCell
     }
     
     
@@ -154,7 +170,7 @@ extension MainVC: UICollectionViewDelegateFlowLayout {
                           height: 100)
         }
         // Üst section için
-        return CGSize(width: view.frame.width, height: 300)
+        return CGSize(width: view.frame.width, height: 400)
     }
     
     
@@ -167,6 +183,11 @@ extension MainVC: UICollectionViewDelegateFlowLayout {
         if section == 1 {
             return UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 8)
         }
-        return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
+    }
+    
 }
