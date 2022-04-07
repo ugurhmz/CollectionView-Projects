@@ -8,6 +8,7 @@
 import UIKit
 
 class BottomCell: UICollectionViewCell {
+    static var identifier = "BottomCell"
     
     var bottomImages: String? {
         didSet {
@@ -16,8 +17,6 @@ class BottomCell: UICollectionViewCell {
             }
         }
     }
-    
-    static var identifier = "BottomCell"
     
     
     let bottomCellImageView: UIImageView = {

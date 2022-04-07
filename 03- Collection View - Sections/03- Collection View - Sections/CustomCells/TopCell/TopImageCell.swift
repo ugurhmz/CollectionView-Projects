@@ -8,6 +8,9 @@
 import UIKit
 
 class TopImageCell: UICollectionViewCell {
+    static var identifier =  "TopImageCell"
+    
+    
     
     var myImages: [String]? {
         didSet {
@@ -16,7 +19,7 @@ class TopImageCell: UICollectionViewCell {
         
     }
     
-    static var identifier =  "TopImageCell"
+   
     
     private let myCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
