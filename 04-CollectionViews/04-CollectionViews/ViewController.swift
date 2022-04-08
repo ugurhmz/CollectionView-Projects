@@ -151,7 +151,12 @@ extension ViewController: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = generalCollectionView.dequeueReusableCell(withReuseIdentifier: "cellId",
                                                              for: indexPath)
-        cell.backgroundColor =  .red
+        
+        // RANDOM COLORS
+        cell.backgroundColor =   UIColor(hue: CGFloat(drand48()),
+                                         saturation: 1,
+                                         brightness: 1,
+                                         alpha: 1)
         
         return cell
     }
@@ -163,6 +168,8 @@ extension ViewController: UICollectionViewDataSource {
                         at indexPath: IndexPath) -> UICollectionReusableView {
         
         let view = collectionView.dequeueReusableSupplementaryView(ofKind: "header", withReuseIdentifier: HeaderReusableView.identifier, for: indexPath) as! HeaderReusableView
+        
+        view.titleLabel.text =  indexPath.section == 1 ?  "Recently Viewed" : "Browse  by category"
         
         return view
     }
