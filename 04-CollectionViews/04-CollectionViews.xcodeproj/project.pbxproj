@@ -12,6 +12,7 @@
 		63B0B69527FF760800765FBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0B69427FF760800765FBB /* ViewController.swift */; };
 		63B0B69B27FF760800765FBB /* _4_CollectionViews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63B0B69927FF760800765FBB /* _4_CollectionViews.xcdatamodeld */; };
 		63B0B69D27FF760800765FBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B0B69C27FF760800765FBB /* Assets.xcassets */; };
+		63B0B6A827FFB22000765FBB /* HeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0B6A727FFB22000765FBB /* HeaderReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		63B0B69A27FF760800765FBB /* _4_CollectionViews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = _4_CollectionViews.xcdatamodel; sourceTree = "<group>"; };
 		63B0B69C27FF760800765FBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63B0B6A127FF760800765FBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63B0B6A727FFB22000765FBB /* HeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				63B0B69C27FF760800765FBB /* Assets.xcassets */,
 				63B0B6A127FF760800765FBB /* Info.plist */,
 				63B0B69927FF760800765FBB /* _4_CollectionViews.xcdatamodeld */,
+				63B0B6A727FFB22000765FBB /* HeaderReusableView.swift */,
 			);
 			path = "04-CollectionViews";
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			files = (
 				63B0B69527FF760800765FBB /* ViewController.swift in Sources */,
 				63B0B69127FF760800765FBB /* AppDelegate.swift in Sources */,
+				63B0B6A827FFB22000765FBB /* HeaderReusableView.swift in Sources */,
 				63B0B69327FF760800765FBB /* SceneDelegate.swift in Sources */,
 				63B0B69B27FF760800765FBB /* _4_CollectionViews.xcdatamodeld in Sources */,
 			);
