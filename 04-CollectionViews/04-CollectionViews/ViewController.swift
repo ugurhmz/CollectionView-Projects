@@ -9,9 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
-    
-    
     private let generalCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: ViewController.createCompositionalLayout())
@@ -29,6 +26,7 @@ class ViewController: UIViewController {
     
     
     
+    //MARK: - createCompositionalLayout
    static func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
        let mylayout = UICollectionViewCompositionalLayout {  (index, environment) -> NSCollectionLayoutSection? in
           
@@ -45,17 +43,16 @@ class ViewController: UIViewController {
         case 0:
             return createFirstSection()
         case 1:
-            return createFirstSection()
+            return createSecondSection()
         case 2:
-            return createFirstSection()
+            return createThirdSection()
         default:
             return  createFirstSection()
         }
     }
     
     
-    
-    
+    //MARK: - FIRST SECTION
     static func createFirstSection() -> NSCollectionLayoutSection {
         
         let inset: CGFloat = 2.5
@@ -72,7 +69,7 @@ class ViewController: UIViewController {
         
         // group
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                               heightDimension: .fractionalHeight(0.4))
+                                               heightDimension: .fractionalHeight(0.3))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
                                                        subitems: [item])
        
@@ -83,9 +80,91 @@ class ViewController: UIViewController {
         section.orthogonalScrollingBehavior = .groupPaging
         
         
-        // suplemantary
-        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
-        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: "header", alignment: .top)
+        return section
+    }
+    
+    
+    
+       //MARK: - SECOND SECTION
+       static func createSecondSection() -> NSCollectionLayoutSection {
+           
+           let inset: CGFloat = 3
+           
+           // item
+           let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.4),
+                                                 heightDimension: .fractionalHeight(1))
+           
+           let item = NSCollectionLayoutItem(layoutSize: itemSize)
+           item.contentInsets = NSDirectionalEdgeInsets(top: inset,
+                                                        leading: inset,
+                                                        bottom: inset,
+                                                        trailing: inset)
+           
+           // group
+           let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9),
+                                                  heightDimension: .fractionalHeight(0.25))
+           let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                          subitem:  item, count: 2)
+           
+           // section
+           let section = NSCollectionLayoutSection(group: group)
+           section.orthogonalScrollingBehavior = .continuous
+           
+           
+           // suplementary
+           let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                   heightDimension: .absolute(45))
+           
+           let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
+                                                                    elementKind: "header",
+                                                                    alignment: .top)
+           section.boundarySupplementaryItems = [header]
+           return section
+       }
+       
+    
+    
+    //MARK: - THIRD SECTION
+    static func createThirdSection() -> NSCollectionLayoutSection {
+        let inset: CGFloat = 2.5
+        
+        // items
+        let smallItemSize  = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                   heightDimension: .fractionalHeight(0.5))
+        let smallItem = NSCollectionLayoutItem(layoutSize: smallItemSize)
+        smallItem.contentInsets = NSDirectionalEdgeInsets(top: inset,
+                                                          leading: inset,
+                                                          bottom: inset,
+                                                          trailing: inset)
+        let largeItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),
+                                                   heightDimension: .fractionalHeight(1))
+        let largeItem = NSCollectionLayoutItem(layoutSize: largeItemSize)
+        largeItem.contentInsets = NSDirectionalEdgeInsets(top: inset,
+                                                          leading: inset,
+                                                          bottom: inset,
+                                                          trailing: inset)
+        
+        // group
+        let verticalGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.25),
+                                                       heightDimension: .fractionalHeight(1))
+        let verticalGroup = NSCollectionLayoutGroup.vertical(layoutSize: verticalGroupSize,
+                                                             subitems: [smallItem])
+        
+        let horizontalGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                         heightDimension: .fractionalHeight(0.4))
+        let horizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize: horizontalGroupSize, subitems: [largeItem, verticalGroup, verticalGroup])
+        
+        
+        // section
+        let section = NSCollectionLayoutSection(group: horizontalGroup)
+        section.orthogonalScrollingBehavior = .groupPaging
+        
+        // suplementary
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                heightDimension: .absolute(44))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
+                                                                 elementKind: "header",
+                                                                 alignment: .top)
         section.boundarySupplementaryItems = [header]
         
         return section
@@ -127,7 +206,6 @@ extension ViewController {
         ])
     }
 }
-
 
 
 //MARK: - DataSource
