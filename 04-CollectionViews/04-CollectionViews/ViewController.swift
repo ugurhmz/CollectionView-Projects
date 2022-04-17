@@ -9,6 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    let otherImgList = ["v1","v2","v3","v4","v5","v6"]
+    
+    
     private let generalCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: ViewController.createCompositionalLayout())
@@ -20,6 +24,9 @@ class ViewController: UIViewController {
                     forCellWithReuseIdentifier: "cellId")
        
         cv.register(HeaderReusableView.self, forSupplementaryViewOfKind: "header", withReuseIdentifier:   HeaderReusableView.identifier)
+        
+        cv.register(ZeroCustomCell.self, forCellWithReuseIdentifier: ZeroCustomCell.identifier)
+        cv.register(OneCustomCell.self, forCellWithReuseIdentifier: OneCustomCell.identifier)
         return cv
     }()
     
@@ -176,6 +183,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+       
     }
     
 
@@ -183,12 +191,13 @@ class ViewController: UIViewController {
     private func setupViews(){
         [generalCollectionView].forEach{ view.addSubview($0)}
         generalCollectionView.dataSource = self
-        //generalCollectionView.delegate = self
+        generalCollectionView.delegate = self
         
         generalCollectionView.collectionViewLayout =  ViewController.createCompositionalLayout()
         
         
         setConstraints()
+      
     }
 }
 
@@ -202,7 +211,9 @@ extension ViewController {
             generalCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
             generalCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             generalCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            generalCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            generalCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            
         ])
     }
 }
@@ -220,6 +231,14 @@ extension ViewController: UICollectionViewDataSource {
     // numberOfItemsInSection
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
+        
+        if section == 0 {
+            return otherImgList.count
+        }
+        
+        if section == 1 {
+            return otherImgList.count
+        }
         return section == 2 ?  15 : 5
     }
     
@@ -236,6 +255,30 @@ extension ViewController: UICollectionViewDataSource {
                                          brightness: 1,
                                          alpha: 1)
         
+        if indexPath.section == 0 {
+            let cell = generalCollectionView.dequeueReusableCell(withReuseIdentifier: ZeroCustomCell.identifier, for: indexPath) as! ZeroCustomCell
+            
+            otherImgList.forEach({ item in
+                cell.imgView.image = UIImage(named: "\(otherImgList[indexPath.row])")
+                
+            })
+            
+            
+            return cell
+        }
+        
+        if indexPath.section == 1 {
+            let cell = generalCollectionView.dequeueReusableCell(withReuseIdentifier: OneCustomCell.identifier, for: indexPath) as! OneCustomCell
+            
+            
+            otherImgList.forEach({ item in
+                cell.imgView.image = UIImage(named: "\(otherImgList[indexPath.row])")
+                
+            })
+            
+            return cell
+        }
+        
         return cell
     }
     
@@ -247,10 +290,30 @@ extension ViewController: UICollectionViewDataSource {
         
         let view = collectionView.dequeueReusableSupplementaryView(ofKind: "header", withReuseIdentifier: HeaderReusableView.identifier, for: indexPath) as! HeaderReusableView
         
-        view.titleLabel.text =  indexPath.section == 1 ?  "Recently Viewed" : "Browse  by category"
+        
+        if indexPath.section == 0 {
+            view.titleLabel.text = "Zero Category"
+        }
+        if indexPath.section == 1{
+            view.titleLabel.text = "First Category"
+        }
+        if indexPath.section == 2 {
+            view.titleLabel.text = "Second Category"
+        }
+        
+        
         
         return view
     }
+     
+}
+
+
+extension ViewController: UICollectionViewDelegate {
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            print(indexPath.row)
+        }
+    }
 }

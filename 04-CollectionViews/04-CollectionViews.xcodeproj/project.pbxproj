@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63AB98FF280C458900E6720D /* ZeroCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AB98FE280C458900E6720D /* ZeroCustomCell.swift */; };
+		63AB9901280C468D00E6720D /* OneCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AB9900280C468D00E6720D /* OneCustomCell.swift */; };
 		63B0B69127FF760800765FBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0B69027FF760800765FBB /* AppDelegate.swift */; };
 		63B0B69327FF760800765FBB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0B69227FF760800765FBB /* SceneDelegate.swift */; };
 		63B0B69527FF760800765FBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0B69427FF760800765FBB /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63AB98FE280C458900E6720D /* ZeroCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroCustomCell.swift; sourceTree = "<group>"; };
+		63AB9900280C468D00E6720D /* OneCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCustomCell.swift; sourceTree = "<group>"; };
 		63B0B68D27FF760800765FBB /* 04-CollectionViews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "04-CollectionViews.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B0B69027FF760800765FBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63B0B69227FF760800765FBB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				63B0B6A127FF760800765FBB /* Info.plist */,
 				63B0B69927FF760800765FBB /* _4_CollectionViews.xcdatamodeld */,
 				63B0B6A727FFB22000765FBB /* HeaderReusableView.swift */,
+				63AB98FE280C458900E6720D /* ZeroCustomCell.swift */,
+				63AB9900280C468D00E6720D /* OneCustomCell.swift */,
 			);
 			path = "04-CollectionViews";
 			sourceTree = "<group>";
@@ -138,9 +144,11 @@
 			files = (
 				63B0B69527FF760800765FBB /* ViewController.swift in Sources */,
 				63B0B69127FF760800765FBB /* AppDelegate.swift in Sources */,
+				63AB9901280C468D00E6720D /* OneCustomCell.swift in Sources */,
 				63B0B6A827FFB22000765FBB /* HeaderReusableView.swift in Sources */,
 				63B0B69327FF760800765FBB /* SceneDelegate.swift in Sources */,
 				63B0B69B27FF760800765FBB /* _4_CollectionViews.xcdatamodeld in Sources */,
+				63AB98FF280C458900E6720D /* ZeroCustomCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

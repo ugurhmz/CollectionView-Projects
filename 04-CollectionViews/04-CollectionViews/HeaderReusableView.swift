@@ -11,6 +11,8 @@ class HeaderReusableView: UICollectionReusableView {
         static var identifier = "HeaderReusableView"
     
     
+    
+    
     public let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 22)
@@ -24,6 +26,7 @@ class HeaderReusableView: UICollectionReusableView {
             super.init(frame: frame)
            
             addSubview(titleLabel)
+            
             setConstraints()
         }
 
@@ -37,7 +40,9 @@ class HeaderReusableView: UICollectionReusableView {
             titleLabel.topAnchor.constraint(equalTo: topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            
         ])
     }
     
