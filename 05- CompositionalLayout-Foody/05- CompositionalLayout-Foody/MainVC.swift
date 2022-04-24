@@ -11,26 +11,100 @@ class MainVC: UIViewController {
 
     
     private let generalCollectionView: UICollectionView = {
-        let  layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: MainVC.createLayout())
+        cv.register(CustomCell.self,
+                    forCellWithReuseIdentifier: CustomCell.identifier)
         return cv
     }()
     
     
+    static func createLayout() -> UICollectionViewCompositionalLayout {
+        return  UICollectionViewCompositionalLayout { (sectionNumber, env) -> NSCollectionLayoutSection? in
+           
+            
+            // Section 0
+            if sectionNumber == 0 {
+                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+                item.contentInsets.trailing = 2
+                item.contentInsets.bottom = 16
+                item.contentInsets.leading = 2
+                
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(230)), subitems: [item])
+                
+                let section = NSCollectionLayoutSection(group: group)
+                
+                section.orthogonalScrollingBehavior = .paging
+           
+                return section
+                
+                    
+            } else {    // Section 1
+                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.25), heightDimension: .absolute(60)))
+                
+                item.contentInsets.trailing = 16
+                item.contentInsets.bottom = 16
+                
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(500)), subitems: [item])
+                
+                let section = NSCollectionLayoutSection(group: group)
+                section.contentInsets.leading = 16
+                
+                return section
+            }
+            
+        }
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
-        
+        navigationItem.title = "Food Delivery"
         setupViews()
     }
     
     private func setupViews() {
         view.addSubview(generalCollectionView)
-        generalCollectionView.backgroundColor = .blue
+        generalCollectionView.backgroundColor = .white
         generalCollectionView.fillSuperview()
+        
+        generalCollectionView.delegate = self
+        generalCollectionView.dataSource = self
     }
 
 }
 
+
+
+//MARK: -
+extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+       
+        if section == 0 {
+            return 3
+        }
+        
+        return 8
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCell.identifier, for: indexPath) as! CustomCell
+        
+        cell.backgroundColor = UIColor(hue: drand48(),
+                                       saturation: 1,
+                                       brightness: 1,
+                                       alpha: 1)
+        
+        return cell
+    }
+    
+    
+}
