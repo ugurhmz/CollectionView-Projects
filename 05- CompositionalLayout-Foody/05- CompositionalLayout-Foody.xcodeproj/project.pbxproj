@@ -12,8 +12,8 @@
 		6353B9A82815F7D2000C61DB /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6353B9A72815F7D2000C61DB /* MainVC.swift */; };
 		6353B9AD2815F7D3000C61DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6353B9AC2815F7D3000C61DB /* Assets.xcassets */; };
 		6353B9BA2815F920000C61DB /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6353B9B92815F920000C61DB /* Extension+UIView.swift */; };
-		6353B9BC2815F9E2000C61DB /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6353B9BB2815F9E2000C61DB /* CustomCell.swift */; };
-		6353B9BE28160C16000C61DB /* HeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6353B9BD28160C16000C61DB /* HeaderReusableView.swift */; };
+		6353B9BC2815F9E2000C61DB /* GeneralCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6353B9BB2815F9E2000C61DB /* GeneralCustomCell.swift */; };
+		6353B9BE28160C16000C61DB /* HeaderTitleReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6353B9BD28160C16000C61DB /* HeaderTitleReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +24,8 @@
 		6353B9AC2815F7D3000C61DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6353B9B12815F7D3000C61DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6353B9B92815F920000C61DB /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
-		6353B9BB2815F9E2000C61DB /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		6353B9BD28160C16000C61DB /* HeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderReusableView.swift; sourceTree = "<group>"; };
+		6353B9BB2815F9E2000C61DB /* GeneralCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCustomCell.swift; sourceTree = "<group>"; };
+		6353B9BD28160C16000C61DB /* HeaderTitleReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitleReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +59,10 @@
 			isa = PBXGroup;
 			children = (
 				6353B9B92815F920000C61DB /* Extension+UIView.swift */,
-				6353B9BB2815F9E2000C61DB /* CustomCell.swift */,
+				6353B9BB2815F9E2000C61DB /* GeneralCustomCell.swift */,
 				6353B9B72815F7ED000C61DB /* Core */,
 				6353B9A72815F7D2000C61DB /* MainVC.swift */,
-				6353B9BD28160C16000C61DB /* HeaderReusableView.swift */,
+				6353B9BD28160C16000C61DB /* HeaderTitleReusableView.swift */,
 			);
 			path = "05- CompositionalLayout-Foody";
 			sourceTree = "<group>";
@@ -149,8 +149,8 @@
 			files = (
 				6353B9A82815F7D2000C61DB /* MainVC.swift in Sources */,
 				6353B9A42815F7D2000C61DB /* AppDelegate.swift in Sources */,
-				6353B9BE28160C16000C61DB /* HeaderReusableView.swift in Sources */,
-				6353B9BC2815F9E2000C61DB /* CustomCell.swift in Sources */,
+				6353B9BE28160C16000C61DB /* HeaderTitleReusableView.swift in Sources */,
+				6353B9BC2815F9E2000C61DB /* GeneralCustomCell.swift in Sources */,
 				6353B9BA2815F920000C61DB /* Extension+UIView.swift in Sources */,
 				6353B9A62815F7D2000C61DB /* SceneDelegate.swift in Sources */,
 			);

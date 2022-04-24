@@ -13,8 +13,8 @@ class MainVC: UIViewController {
     
     private let generalCollectionView: UICollectionView = {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: MainVC.createLayout())
-        cv.register(CustomCell.self,
-                    forCellWithReuseIdentifier: CustomCell.identifier)
+        cv.register(GeneralCustomCell.self,
+                    forCellWithReuseIdentifier: GeneralCustomCell.identifier)
         return cv
     }()
     
@@ -83,7 +83,7 @@ class MainVC: UIViewController {
         generalCollectionView.dataSource = self
         
         
-        generalCollectionView.register(HeaderReusableView.self, forSupplementaryViewOfKind: MainVC.categoryHeaderId, withReuseIdentifier: HeaderReusableView.identifier)
+        generalCollectionView.register(HeaderTitleReusableView.self, forSupplementaryViewOfKind: MainVC.categoryHeaderId, withReuseIdentifier: HeaderTitleReusableView.identifier)
     }
 
 }
@@ -94,7 +94,7 @@ extension MainVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderReusableView.identifier, for: indexPath)
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderTitleReusableView.identifier, for: indexPath)
         
         return header
     }
@@ -115,12 +115,12 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
             return 3
         }
         
-        return 8
+        return 24
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCell.identifier, for: indexPath) as! CustomCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GeneralCustomCell.identifier, for: indexPath) as! GeneralCustomCell
         
         cell.backgroundColor = UIColor(hue: drand48(),
                                        saturation: 1,
@@ -130,5 +130,16 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            print("section 0 -> ",indexPath.item)
+        }
+        
+        
+        if indexPath.section == 1 {
+            print("section 1 -> ",indexPath.item)
+        }
+    }
 }
 

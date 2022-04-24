@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomCell: UICollectionViewCell {
+class GeneralCustomCell: UICollectionViewCell {
     
     
     static var identifier = "CustomCell"
