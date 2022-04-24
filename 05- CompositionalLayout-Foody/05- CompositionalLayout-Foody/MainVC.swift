@@ -9,6 +9,7 @@ import UIKit
 
 class MainVC: UIViewController {
 
+    static let categoryHeaderId = "categoryHeaderId"
     
     private let generalCollectionView: UICollectionView = {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: MainVC.createLayout())
@@ -26,7 +27,7 @@ class MainVC: UIViewController {
             if sectionNumber == 0 {
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
                 item.contentInsets.trailing = 2
-                item.contentInsets.bottom = 16
+                item.contentInsets.bottom = 5
                 item.contentInsets.leading = 2
                 
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(230)), subitems: [item])
@@ -39,7 +40,7 @@ class MainVC: UIViewController {
                 
                     
             } else {    // Section 1
-                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.25), heightDimension: .absolute(60)))
+                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.25), heightDimension: .absolute(150)))
                 
                 item.contentInsets.trailing = 16
                 item.contentInsets.bottom = 16
@@ -49,6 +50,14 @@ class MainVC: UIViewController {
                 let section = NSCollectionLayoutSection(group: group)
                 section.contentInsets.leading = 16
                 
+                
+                section.boundarySupplementaryItems = [
+                
+                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: categoryHeaderId, alignment: .topLeading)
+                ]
+                
+                
+                
                 return section
             }
             
@@ -56,6 +65,7 @@ class MainVC: UIViewController {
     }
     
     
+  
     
     
     override func viewDidLoad() {
@@ -71,10 +81,24 @@ class MainVC: UIViewController {
         
         generalCollectionView.delegate = self
         generalCollectionView.dataSource = self
+        
+        
+        generalCollectionView.register(HeaderReusableView.self, forSupplementaryViewOfKind: MainVC.categoryHeaderId, withReuseIdentifier: HeaderReusableView.identifier)
     }
 
 }
 
+
+//MARK: -
+extension MainVC: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderReusableView.identifier, for: indexPath)
+        
+        return header
+    }
+}
 
 
 //MARK: -
@@ -106,5 +130,5 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
     
-    
 }
+
