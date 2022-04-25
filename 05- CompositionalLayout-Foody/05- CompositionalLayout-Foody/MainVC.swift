@@ -156,13 +156,24 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
-            print("section 0 -> ",indexPath.item)
-        }
         
+        let vc = UIViewController()
         
-        if indexPath.section == 1 {
-            print("section 1 -> ",indexPath.item)
+        switch indexPath.section {
+        case 0:
+            vc.view.backgroundColor = .yellow
+            navigationController?.pushViewController(vc, animated: true)
+        case 1:
+            vc.view.backgroundColor = .blue
+            navigationController?.pushViewController(vc, animated: true)
+        case 2:
+            vc.view.backgroundColor = .systemOrange
+            navigationController?.pushViewController(vc, animated: true)
+        case 3:
+            vc.view.backgroundColor = .purple
+            navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
         }
         
         
