@@ -39,7 +39,7 @@ class MainVC: UIViewController {
                 return section
                 
                     
-            } else {    // Section 1
+            } else if sectionNumber == 1 {    // Section 1
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.25), heightDimension: .absolute(150)))
                 
                 item.contentInsets.trailing = 16
@@ -58,6 +58,16 @@ class MainVC: UIViewController {
                 
                 
                 
+                return section
+            } else {
+                let item = NSCollectionLayoutItem.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+                item.contentInsets.trailing = 32
+                
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(0.8), heightDimension: .absolute(125)), subitems: [item])
+                
+                let section = NSCollectionLayoutSection(group: group)
+                section.orthogonalScrollingBehavior = .continuous
+                section.contentInsets.leading = 16
                 return section
             }
             
@@ -105,7 +115,7 @@ extension MainVC: UICollectionViewDelegateFlowLayout {
 extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 3
     }
     
     
@@ -115,7 +125,10 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
             return 3
         }
         
-        return 24
+        if section == 1 {
+            return 8
+        }
+        return 8
     }
     
     
@@ -140,6 +153,8 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
         if indexPath.section == 1 {
             print("section 1 -> ",indexPath.item)
         }
+        
+        
     }
 }
 
