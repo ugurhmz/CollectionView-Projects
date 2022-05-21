@@ -13,6 +13,7 @@
 		636BB4692839627100095F2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 636BB4682839627100095F2A /* Assets.xcassets */; };
 		636CC1C9283987D8009C96DC /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CC1C8283987D8009C96DC /* Extension+UIView.swift */; };
 		636CC1CB283987F3009C96DC /* Extension+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CC1CA283987F3009C96DC /* Extension+TextField.swift */; };
+		636CC1CF28399131009C96DC /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CC1CE28399131009C96DC /* RegisterVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		636BB46D2839627100095F2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		636CC1C8283987D8009C96DC /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		636CC1CA283987F3009C96DC /* Extension+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+TextField.swift"; sourceTree = "<group>"; };
+		636CC1CE28399131009C96DC /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				636BB4632839627000095F2A /* LoginVC.swift */,
 				636CC1C8283987D8009C96DC /* Extension+UIView.swift */,
 				636CC1CA283987F3009C96DC /* Extension+TextField.swift */,
+				636CC1CE28399131009C96DC /* RegisterVC.swift */,
 			);
 			path = "06-LoginRegisterStructure";
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				636BB4642839627000095F2A /* LoginVC.swift in Sources */,
 				636CC1CB283987F3009C96DC /* Extension+TextField.swift in Sources */,
 				636BB4602839627000095F2A /* AppDelegate.swift in Sources */,
+				636CC1CF28399131009C96DC /* RegisterVC.swift in Sources */,
 				636CC1C9283987D8009C96DC /* Extension+UIView.swift in Sources */,
 				636BB4622839627000095F2A /* SceneDelegate.swift in Sources */,
 			);

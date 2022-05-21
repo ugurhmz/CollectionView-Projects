@@ -153,6 +153,9 @@ extension LoginVC {
     
     // Go RegisterVC
     @objc func goRegisterVC(){
+        let regVC = RegisterVC()
+        regVC.modalPresentationStyle = .pageSheet
+        present(regVC, animated: true, completion: nil)
     }
     
     // click forgot pw
