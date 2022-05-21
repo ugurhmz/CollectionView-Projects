@@ -7,31 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		632D2F862821E24000441152 /* MVVM-RRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632D2F852821E24000441152 /* MVVM-RRoute.swift */; };
-		6353B9A42815F7D2000C61DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6353B9A32815F7D2000C61DB /* AppDelegate.swift */; };
-		6353B9A62815F7D2000C61DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6353B9A52815F7D2000C61DB /* SceneDelegate.swift */; };
-		6353B9A82815F7D2000C61DB /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6353B9A72815F7D2000C61DB /* MainVC.swift */; };
-		6353B9AD2815F7D3000C61DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6353B9AC2815F7D3000C61DB /* Assets.xcassets */; };
-		6353B9BA2815F920000C61DB /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6353B9B92815F920000C61DB /* Extension+UIView.swift */; };
-		6353B9BC2815F9E2000C61DB /* GeneralCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6353B9BB2815F9E2000C61DB /* GeneralCustomCell.swift */; };
-		6353B9BE28160C16000C61DB /* HeaderTitleReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6353B9BD28160C16000C61DB /* HeaderTitleReusableView.swift */; };
+		636BB4602839627000095F2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636BB45F2839627000095F2A /* AppDelegate.swift */; };
+		636BB4622839627000095F2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636BB4612839627000095F2A /* SceneDelegate.swift */; };
+		636BB4642839627000095F2A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636BB4632839627000095F2A /* LoginVC.swift */; };
+		636BB4692839627100095F2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 636BB4682839627100095F2A /* Assets.xcassets */; };
+		636CC1C9283987D8009C96DC /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CC1C8283987D8009C96DC /* Extension+UIView.swift */; };
+		636CC1CB283987F3009C96DC /* Extension+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CC1CA283987F3009C96DC /* Extension+TextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		632D2F852821E24000441152 /* MVVM-RRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MVVM-RRoute.swift"; sourceTree = "<group>"; };
-		6353B9A02815F7D2000C61DB /* 05- CompositionalLayout-Foody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "05- CompositionalLayout-Foody.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6353B9A32815F7D2000C61DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6353B9A52815F7D2000C61DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6353B9A72815F7D2000C61DB /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		6353B9AC2815F7D3000C61DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6353B9B12815F7D3000C61DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6353B9B92815F920000C61DB /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
-		6353B9BB2815F9E2000C61DB /* GeneralCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCustomCell.swift; sourceTree = "<group>"; };
-		6353B9BD28160C16000C61DB /* HeaderTitleReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitleReusableView.swift; sourceTree = "<group>"; };
+		636BB45C2839627000095F2A /* 06-LoginRegisterStructure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "06-LoginRegisterStructure.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		636BB45F2839627000095F2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		636BB4612839627000095F2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		636BB4632839627000095F2A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		636BB4682839627100095F2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		636BB46D2839627100095F2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		636CC1C8283987D8009C96DC /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		636CC1CA283987F3009C96DC /* Extension+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+TextField.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6353B99D2815F7D2000C61DB /* Frameworks */ = {
+		636BB4592839627000095F2A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,82 +37,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6353B9972815F7D2000C61DB = {
+		636BB4532839627000095F2A = {
 			isa = PBXGroup;
 			children = (
-				632D2F852821E24000441152 /* MVVM-RRoute.swift */,
-				6353B9A22815F7D2000C61DB /* 05- CompositionalLayout-Foody */,
-				6353B9A12815F7D2000C61DB /* Products */,
+				636BB45E2839627000095F2A /* 06-LoginRegisterStructure */,
+				636BB45D2839627000095F2A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		6353B9A12815F7D2000C61DB /* Products */ = {
+		636BB45D2839627000095F2A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6353B9A02815F7D2000C61DB /* 05- CompositionalLayout-Foody.app */,
+				636BB45C2839627000095F2A /* 06-LoginRegisterStructure.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6353B9A22815F7D2000C61DB /* 05- CompositionalLayout-Foody */ = {
+		636BB45E2839627000095F2A /* 06-LoginRegisterStructure */ = {
 			isa = PBXGroup;
 			children = (
-				6353B9B92815F920000C61DB /* Extension+UIView.swift */,
-				6353B9BB2815F9E2000C61DB /* GeneralCustomCell.swift */,
-				6353B9B72815F7ED000C61DB /* Core */,
-				6353B9A72815F7D2000C61DB /* MainVC.swift */,
-				6353B9BD28160C16000C61DB /* HeaderTitleReusableView.swift */,
+				636CC1C72839836C009C96DC /* Resources */,
+				636BB4632839627000095F2A /* LoginVC.swift */,
+				636CC1C8283987D8009C96DC /* Extension+UIView.swift */,
+				636CC1CA283987F3009C96DC /* Extension+TextField.swift */,
 			);
-			path = "05- CompositionalLayout-Foody";
+			path = "06-LoginRegisterStructure";
 			sourceTree = "<group>";
 		};
-		6353B9B72815F7ED000C61DB /* Core */ = {
+		636CC1C72839836C009C96DC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6353B9A32815F7D2000C61DB /* AppDelegate.swift */,
-				6353B9A52815F7D2000C61DB /* SceneDelegate.swift */,
-				6353B9AC2815F7D3000C61DB /* Assets.xcassets */,
-				6353B9B12815F7D3000C61DB /* Info.plist */,
+				636BB45F2839627000095F2A /* AppDelegate.swift */,
+				636BB4612839627000095F2A /* SceneDelegate.swift */,
+				636BB4682839627100095F2A /* Assets.xcassets */,
+				636BB46D2839627100095F2A /* Info.plist */,
 			);
-			path = Core;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6353B99F2815F7D2000C61DB /* 05- CompositionalLayout-Foody */ = {
+		636BB45B2839627000095F2A /* 06-LoginRegisterStructure */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6353B9B42815F7D3000C61DB /* Build configuration list for PBXNativeTarget "05- CompositionalLayout-Foody" */;
+			buildConfigurationList = 636BB4702839627100095F2A /* Build configuration list for PBXNativeTarget "06-LoginRegisterStructure" */;
 			buildPhases = (
-				6353B99C2815F7D2000C61DB /* Sources */,
-				6353B99D2815F7D2000C61DB /* Frameworks */,
-				6353B99E2815F7D2000C61DB /* Resources */,
+				636BB4582839627000095F2A /* Sources */,
+				636BB4592839627000095F2A /* Frameworks */,
+				636BB45A2839627000095F2A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "05- CompositionalLayout-Foody";
-			productName = "05- CompositionalLayout-Foody";
-			productReference = 6353B9A02815F7D2000C61DB /* 05- CompositionalLayout-Foody.app */;
+			name = "06-LoginRegisterStructure";
+			productName = "06-LoginRegisterStructure";
+			productReference = 636BB45C2839627000095F2A /* 06-LoginRegisterStructure.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6353B9982815F7D2000C61DB /* Project object */ = {
+		636BB4542839627000095F2A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					6353B99F2815F7D2000C61DB = {
+					636BB45B2839627000095F2A = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 6353B99B2815F7D2000C61DB /* Build configuration list for PBXProject "05- CompositionalLayout-Foody" */;
+			buildConfigurationList = 636BB4572839627000095F2A /* Build configuration list for PBXProject "06-LoginRegisterStructure" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -124,46 +118,44 @@
 				en,
 				Base,
 			);
-			mainGroup = 6353B9972815F7D2000C61DB;
-			productRefGroup = 6353B9A12815F7D2000C61DB /* Products */;
+			mainGroup = 636BB4532839627000095F2A;
+			productRefGroup = 636BB45D2839627000095F2A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6353B99F2815F7D2000C61DB /* 05- CompositionalLayout-Foody */,
+				636BB45B2839627000095F2A /* 06-LoginRegisterStructure */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6353B99E2815F7D2000C61DB /* Resources */ = {
+		636BB45A2839627000095F2A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6353B9AD2815F7D3000C61DB /* Assets.xcassets in Resources */,
+				636BB4692839627100095F2A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6353B99C2815F7D2000C61DB /* Sources */ = {
+		636BB4582839627000095F2A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6353B9A82815F7D2000C61DB /* MainVC.swift in Sources */,
-				632D2F862821E24000441152 /* MVVM-RRoute.swift in Sources */,
-				6353B9A42815F7D2000C61DB /* AppDelegate.swift in Sources */,
-				6353B9BE28160C16000C61DB /* HeaderTitleReusableView.swift in Sources */,
-				6353B9BC2815F9E2000C61DB /* GeneralCustomCell.swift in Sources */,
-				6353B9BA2815F920000C61DB /* Extension+UIView.swift in Sources */,
-				6353B9A62815F7D2000C61DB /* SceneDelegate.swift in Sources */,
+				636BB4642839627000095F2A /* LoginVC.swift in Sources */,
+				636CC1CB283987F3009C96DC /* Extension+TextField.swift in Sources */,
+				636BB4602839627000095F2A /* AppDelegate.swift in Sources */,
+				636CC1C9283987D8009C96DC /* Extension+UIView.swift in Sources */,
+				636BB4622839627000095F2A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		6353B9B22815F7D3000C61DB /* Debug */ = {
+		636BB46E2839627100095F2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -224,7 +216,7 @@
 			};
 			name = Debug;
 		};
-		6353B9B32815F7D3000C61DB /* Release */ = {
+		636BB46F2839627100095F2A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -279,7 +271,7 @@
 			};
 			name = Release;
 		};
-		6353B9B52815F7D3000C61DB /* Debug */ = {
+		636BB4712839627100095F2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -288,7 +280,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YW89A2JD7V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "05- CompositionalLayout-Foody/Core/Info.plist";
+				INFOPLIST_FILE = "06-LoginRegisterStructure/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -298,7 +290,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ugurhmz.-5--CompositionalLayout-Foody";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ugurhmz.-6-LoginRegisterStructure";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -306,7 +298,7 @@
 			};
 			name = Debug;
 		};
-		6353B9B62815F7D3000C61DB /* Release */ = {
+		636BB4722839627100095F2A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -315,7 +307,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YW89A2JD7V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "05- CompositionalLayout-Foody/Core/Info.plist";
+				INFOPLIST_FILE = "06-LoginRegisterStructure/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -325,7 +317,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ugurhmz.-5--CompositionalLayout-Foody";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ugurhmz.-6-LoginRegisterStructure";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -336,25 +328,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6353B99B2815F7D2000C61DB /* Build configuration list for PBXProject "05- CompositionalLayout-Foody" */ = {
+		636BB4572839627000095F2A /* Build configuration list for PBXProject "06-LoginRegisterStructure" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6353B9B22815F7D3000C61DB /* Debug */,
-				6353B9B32815F7D3000C61DB /* Release */,
+				636BB46E2839627100095F2A /* Debug */,
+				636BB46F2839627100095F2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6353B9B42815F7D3000C61DB /* Build configuration list for PBXNativeTarget "05- CompositionalLayout-Foody" */ = {
+		636BB4702839627100095F2A /* Build configuration list for PBXNativeTarget "06-LoginRegisterStructure" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6353B9B52815F7D3000C61DB /* Debug */,
-				6353B9B62815F7D3000C61DB /* Release */,
+				636BB4712839627100095F2A /* Debug */,
+				636BB4722839627100095F2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6353B9982815F7D2000C61DB /* Project object */;
+	rootObject = 636BB4542839627000095F2A /* Project object */;
 }
